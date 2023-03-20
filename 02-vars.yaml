@@ -15,10 +15,14 @@
 
     - name: Printing the URL
       ansible.builtin.debug:
-        msg: {{URL}}  
+        msg: "{{URL}}"
       vars:
         URL: task.google.com                 # Task / Local Level Variable ; The scope of is it only this task 
 
 # $URL is bash is equivalent to {{URL}} in YAML 
 
 # Local Variables > Global Variables
+
+
+# When to specifically use Quites ? 
+# When you're printing only the variable then enclose them in the Double Quotes.
