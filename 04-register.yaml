@@ -8,6 +8,6 @@
 
   - name: Printing the Shell Output using OUT Variable
     ansible.builtin.debug:  
-    msg: "{{OUT}}" 
+      msg: "{{OUT}}" 
 
 # Shell Module by default don't show you the output; It just executes and if you want to see the out, you need to register the output 
