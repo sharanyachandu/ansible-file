@@ -59,6 +59,6 @@ YAML is just  markup languaga ; Markup language is nothing a presentation langua
 ### How to run a playbook ?
 
 ```
-ansible-playbook -e ansible_user=userName -e ansible_password=password nameOfThePlaybook.yml 
+ansible-playbook -i inventoryFileName -e ansible_user=userName -e ansible_password=password nameOfThePlaybook.yml 
 
 ```
