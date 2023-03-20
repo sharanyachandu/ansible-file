@@ -1,0 +1,10 @@
+- name: Demo on facts 
+  hosts: all    # Mention the name of the inventory group that you want this to be running against 
+  tasks:
+    - name: Print Hello 
+      ansible.builtin.debug:
+        msg: I am learning Ansible
+
+    - name: This is a pre-defined variable gather by the fact 
+      ansible.builtin.debug:
+        msg: Distribution of this machine is {{ansible_distribution}}
