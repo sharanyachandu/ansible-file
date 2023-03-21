@@ -9,4 +9,3 @@
   - name: Printing
     ansible.builtin.debug:  
       msg: "{{OUT}}"
-
