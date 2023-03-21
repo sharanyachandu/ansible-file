@@ -16,4 +16,5 @@
   - name: Printing
     ansible.builtin.debug:  
       msg: "{{OUT}}"
+
 # When a task fails, the playbook will be a failure and will stop all the subsequent plays 
