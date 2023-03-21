@@ -1,0 +1,18 @@
+- name: Demo on using Tags   
+  hosts: all 
+  tasks: 
+    - name: This is Frontend task 
+      ansible.builtin.debug:
+        msg: Installing Frontend
+
+    - name: This is MongoDB task 
+      ansible.builtin.debug:
+        msg: Installing MongoDB
+
+    - name: This is User task 
+      ansible.builtin.debug:
+        msg: Installing User
+
+    - name: This is Cart task 
+      ansible.builtin.debug:
+        msg: Installing Cart
