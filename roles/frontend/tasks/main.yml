@@ -18,4 +18,16 @@
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html
-    remote_src: yes                    # This ensure your source to copy is on the remote machine 
+    remote_src: yes                    # This ensure your source to copy is on the remote machine  
+
+- name: Copying Roboshop Proxy Config 
+  ansible.builtin.copy:
+    src: /roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+
+- name: Restarting nginx
+  ansible.builtin.service:
+    name: nginx
+    state: restarted         
+    enabled: yes
+      
