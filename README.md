@@ -75,3 +75,9 @@ How do I know, what all are the facts that are collected by ANSIBLE ?
     $ ansible -i inventory all -m setup 
 
 ```
+
+
+### Block and Rescue :
+
+Block is nothing but a group of tasks; 
+Rescue will only be executed if any of the tasks in the block of tasks fail.
