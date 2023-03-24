@@ -31,8 +31,8 @@
 
 - name: Install Application Dependencies 
   ansible.builtin.pip:
-    name: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt  
-    executable: pip3 
+    name: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
+    executable: pip3
 
 # Call Configure Service Role
 - name: Calling Config Service Role From Common
