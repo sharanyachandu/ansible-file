@@ -19,10 +19,15 @@
     src: /var/log/mysqld.log
   register: mysql_log   
 
-- name: Print returned information
-  ansible.builtin.debug:
-    msg: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') |split(' ') | last }}"
+- name: Fetching the password and assigning it to a variable 
+  ansible.builtin.set_facts:
+      DEFAULT_PASSWORD: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') |split(' ') | last }}"
 
-# - name: Declaring the facts
-#   ansible.builtin.set_facts:
-#       DEFAULT_PASSWORD: "{{}}"
+- name: Changing MySQL Password 
+  ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASSWORD}}""
+
+
+# - name: Print returned information
+#   ansible.builtin.debug:
+#     msg: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') |split(' ') | last }}"
+
