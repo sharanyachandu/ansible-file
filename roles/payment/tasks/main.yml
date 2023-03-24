@@ -1,0 +1,19 @@
+- name: Installing Python And Dependencies
+  ansible.builtin.yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: present
+
+# Calling User Task from common role
+- name: Calling Create User Role From Common
+  ansible.builtin.include_role:
+    name: common 
+    tasks_from: create-user
+
+- name: Calling Download and Extract Role From Common
+  ansible.builtin.include_role:
+    name: common 
+    tasks_from: download
+    
