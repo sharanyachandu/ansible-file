@@ -1,0 +1,6 @@
+- name: Demo  on vault 
+  hosts: localhost 
+  tasks:
+    - name: Demo on secret 
+      ansible.buildin.debug: 
+        msg: PASSWORD = abc@123
