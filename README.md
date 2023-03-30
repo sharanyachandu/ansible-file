@@ -75,7 +75,11 @@ How do I know, what all are the facts that are collected by ANSIBLE ?
     $ ansible -i inventory all -m setup 
 
 ```
+### Ansible-Pull 
 
+```
+ansible-pull -U urlName.git playbookName.yml -e COMPONENT=componentName
+```
 
 ### Block and Rescue :
 
