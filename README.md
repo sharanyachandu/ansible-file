@@ -85,3 +85,9 @@ ansible-pull -U urlName.git playbookName.yml -e COMPONENT=componentName
 
 Block is nothing but a group of tasks; 
 Rescue will only be executed if any of the tasks in the block of tasks fail.
+
+### Ansible-Dryrun Command 
+
+```
+ansible-playbook robot-dryrun.yaml -e COMPONENT=mongodb -e ansible_user=centos -e ansible_password=xyz123 -e ENV=qa
+```
