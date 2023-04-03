@@ -22,7 +22,7 @@ pipeline {
             }
         }
 
-        Stage('Promotion To Prod Branch') {       // This stage will run only against the main branch
+        stage('Promotion To Prod Branch') {       // This stage will run only against the main branch
             when { branch 'main' }
             steps {
                 sh "env"
