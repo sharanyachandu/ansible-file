@@ -9,7 +9,7 @@ pipeline {
             steps {
                 sh "env"
                 sh "echo This step should run against non-main branches only"
-                sh "echo PERFORMING LINT CHECKS"
+                sh "echo PERFORMING LINT CHECKSS"
             }
         }
 
